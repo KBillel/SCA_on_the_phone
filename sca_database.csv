@@ -1,0 +1,33 @@
+question,yes,no,exposed_acs,exposed_no_acs,p_value,total_acs,total_no_acs,total_patient,gender,associeted_question
+AGE < 40,291,1107,18,273,0.001,329,1069,1398,male,
+AGE 40-50,317,1081,59,258,0.001,329,1069,1398,male
+AGE 50-60,320,1078,95,225,0.001,329,1069,1398,male
+AGE > 60,470,928,157,313,0.001,329,1069,1398,male
+Hypertension,405,993,123,282,0.001,329,1069,1398,male,"Avez-vous de l'hypertension, prennez vous des médicaments en liens avec une tension élevés"
+ATCD Coronary disease,387,1011,126,282,0.001,329,1069,1398,male
+Family ATCD Coronary disease,231,1167,51,180,0.568,329,1069,1398,male
+Tabacco use,545,853,133,412,0.54,329,1069,1398,male
+Diabetes,183,1215,59,124,0.003,329,1069,1398,male,"Avez-vous du diabète, prennez vous des médicaments pour le diabète"
+Dyslipidaemia,337,1061,97,240,0.009,329,1069,1398,male
+Aspirin,296,1102,100,196,0.001,329,1069,1398,male
+Clopidogrel,209,1189,77,132,0.001,329,1069,1398,male
+Thyroid Hormone,12,1386,2,10,0.743,329,1069,1398,male
+Statin,263,1135,87,176,0.001,329,1069,1398,male
+Severe pain (>6),592,806,162,430,0.004,329,1069,1398,male
+Permanent Pain,350,1048,102,248,0.004,329,1069,1398,male
+Crescendo Pain,307,1091,67,240,0.066,329,1069,1398,male
+Abrut Pain,590,808,157,433,0.066,329,1069,1398,male
+unclass_pain_type,501,897,105,396,0.066,329,1069,1398,male
+Pain At Rest,1106,292,244,862,0.012,329,1069,1398,male
+Pain sport or stress,180,1218,58,122,0.012,329,1069,1398,male
+unclass_pain_circumstance,112,1286,27,85,0.012,329,1069,1398,male
+typical_chest_pain,799,599,224,575,0.001,329,1069,1398,male
+retrostrenal_pain ,671,727,201,470,0.001,329,1069,1398,male
+post_myocardial_infarction,119,268,50,69,0.008,126,261,387,male
+peak_type,260,1138,28,232,0.001,329,1069,1398,male
+Burning,182,1216,51,131,0.126,329,1069,1398,male
+Pinching,81,1317,7,74,0.001,329,1069,1398,male
+position_change,252,1146,29,223,0.001,329,1069,1398,male
+non_breathing_related,1037,361,299,738,0.001,329,1069,1398,male
+radiating,592,806,179,413,0.001,329,1069,1398,male
+additional_symptom,937,461,249,688,0.001,329,1069,1398,male

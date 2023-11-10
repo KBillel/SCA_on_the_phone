@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chest Pain AI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 id="question">{{ question }}</h3>
+                <button class="btn btn-success mr-2" onclick="answerQuestion('YES')">YES</button>
+                <button class="btn btn-danger" onclick="answerQuestion('NO')">NO</button>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12">
+                <h3>Diagnosis:</h3>
+                <p id="diagnosisResult"></p>
+                <p id="symptoms"><p>
+                <p><button onclick="play_music()">Play</button>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function answerQuestion(answer) {
+            fetch('/answer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({
+                    'answer': answer
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('question').innerText = data.question;
+                if (data.diagnosis) {
+                    document.getElementById('diagnosisResult').innerText = "Current information of the patient increased its probability of having an ACS by : " + data.diagnosis;
+                if (data.diagnosis>100) {
+                    document.getElementById('diagnosisResult').style.color = 'red';
+                    let audio = new Audio("static/ambulance.mp3");
+                    audio.play();
+
+                }
+                }
+                if(data.list_symptoms){
+                    document.getElementById('symptoms').innerText = "List of actual symtoms : " + data.list_symptoms;
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
